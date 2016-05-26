@@ -5,9 +5,16 @@ class Test extends Component {
 
   render() {
     const { test } = this.props
+    // debugger;
     return (
       <p>
-        {test}
+      test
+      { test.map((p) => {
+        return (
+          <li>{p.price}</li>
+        )
+      }) }
+
       </p>
     )
   }
