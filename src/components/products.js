@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-class Test extends Component {
+class Products extends Component {
 
   render() {
-    const { test } = this.props
+    const { products } = this.props
     // debugger;
     return (
       <p>
-      test
-      { test.map((p) => {
+      products
+      { products.map((p) => {
         return (
           <li>{p.price}</li>
         )
@@ -22,8 +22,8 @@ class Test extends Component {
 
 const mapStateToProps = (appState) => {
   return {
-    test: appState.test
+    products: appState.products
   }
 }
 
-export default connect(mapStateToProps)(Test)
+export default connect(mapStateToProps)(Products)

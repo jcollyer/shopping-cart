@@ -2,12 +2,12 @@ import React from 'react';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 
 import App from './components/app'
-import Test from './components/test'
+import Products from './components/products'
 
 export default (
   <Router history={hashHistory}>
     <Route path="/" component={App} >
-      <IndexRoute component={Test} />
+      <IndexRoute component={Products} />
     </Route>
   </Router>
 );
