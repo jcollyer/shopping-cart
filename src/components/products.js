@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Product from './product'
-class Products extends Component {
 
+class Products extends Component {
   render() {
     const { products } = this.props
     return (

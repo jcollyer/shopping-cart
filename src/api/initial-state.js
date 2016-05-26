@@ -26,5 +26,6 @@ export const initialState = {
       "type": "sugar free",
       "price": 1
     }
-  ]
+  ],
+  cartProducts: []
 }
