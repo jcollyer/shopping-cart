@@ -1,7 +1,7 @@
 {
-  "name": "redux-template",
+  "name": "redux-shopping-cart",
   "version": "0.0.0",
-  "description": "Redux template counter app",
+  "description": "Redux simple shopping cart app",
   "scripts": {
     "start": "node server.js",
     "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register",
@@ -9,13 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactjs/redux.git"
+    "url": "https://github.com/jcollyer/shopping-cart.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/reactjs/redux/issues"
+    "url": "https://github.com/jcollyer/shopping-cart/issues"
   },
-  "homepage": "http://redux.js.org",
   "dependencies": {
     "react": "^0.14.7",
     "react-dom": "^0.14.7",

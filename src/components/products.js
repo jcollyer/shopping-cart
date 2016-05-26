@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import Product from './product'
 class Products extends Component {
 
   render() {
     const { products } = this.props
-    // debugger;
     return (
-      <p>
-      products
-      { products.map((p) => {
-        return (
-          <li>{p.price}</li>
-        )
-      }) }
+      <div>
+        <h3>products:</h3>
+        { products.map((p) => {
+          return (
+            <div  key={p.id}>
+              <Product product={p} />
+            </div>
+          )
+        }) }
 
-      </p>
+      </div>
     )
   }
 }
