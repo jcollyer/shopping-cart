@@ -9,7 +9,6 @@ export default (
   <Router history={hashHistory}>
     <Route path="/" component={App} >
       <IndexRoute component={Products} />
-      <Route path="/cart" component={Cart} />
     </Route>
   </Router>
 );

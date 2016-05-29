@@ -1,6 +1,9 @@
 // export const initialState = "hi test"
 
 export const initialState = {
+  cart: [],
+  cartIds: [],
+  cartQuantity: {},
   chocolates: [
     {
       "description": "Milk chocolate milder and sweeter because it is made with milk and a higher sugar content than the darker varieties. It also has a smaller quantity of chocolate liquor and, therefore, fewer flavors and aromas.",
@@ -26,6 +29,5 @@ export const initialState = {
       "type": "sugar free",
       "price": 1
     }
-  ],
-  cartProducts: []
+  ]
 }

@@ -4,16 +4,13 @@ import Product from './product'
 
 class Cart extends Component {
   render() {
-    const { products } = this.props
-
-    const hasProducts = products.length > 0
+    const { cart, products } = this.props
+    const hasProducts = cart.cartIds.length > 0
     const nodes = !hasProducts ?
       <em>Please add some products to cart.</em> :
-      products.map(product =>
-        <Product
-          title={product.description}
-          price={product.price}
-          key={product.id}/>
+      cart.cartIds.map((id, i) => {
+        return <div key={id}>{products[id - 1].type} x{cart.cartQuantity[id]}</div>
+      }
     )
 
     return (
@@ -27,7 +24,8 @@ class Cart extends Component {
 
 const mapStateToProps = (appState) => {
   return {
-    products: appState.cart
+    cart: appState.cart,
+    products: appState.products
   }
 }
 
