@@ -4,6 +4,7 @@ export const initialState = {
   cart: [],
   cartIds: [],
   cartQuantity: {},
+  cartTotal: 0,
   modal: {showModal: false},
   chocolates: [
     {

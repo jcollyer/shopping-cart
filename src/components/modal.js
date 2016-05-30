@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { showModal } from '../actions'
+import Cart from './cart'
 
 class Modal extends Component {
   render() {
@@ -8,7 +9,10 @@ class Modal extends Component {
     const showModal = modal.showModal
       return (
         <div className={showModal ? "" : "hide"}>
-          hi modal
+          <h2>Cart</h2>
+          <Cart />
+          -------
+          <p>total: $</p>
           <button onClick={() => this.props.showModal(false)}>close modal</button>
         </div>
       )
