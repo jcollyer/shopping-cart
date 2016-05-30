@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import products, { getProductsById } from './products';
 import cart from './cart';
+import modal from './modal';
 
 export const rootReducer = combineReducers({
   cart,
-  products
+  products,
+  modal
 })
 
 export function getCartProducts(state) {

@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux';
-import { createStore } from 'redux'
-import { rootReducer } from './reducers'
 import router from './router';
+import store from './store'
 
-const store = createStore(rootReducer)
+import './style.less'
+
 
 ReactDOM.render(
   <Provider store={store}>{router}</Provider>,
