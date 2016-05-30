@@ -1,7 +1,7 @@
 import { initialState } from '../api/initial-state'
 import { ADD_TO_CART } from '../constants/action-types'
 
-export function cartIds(state = initialState.cartIds, action) {
+function cartIds(state = initialState.cartIds, action) {
   switch (action.type) {
     case ADD_TO_CART:
       // check if productId is NOT already in cart so not to duplicate

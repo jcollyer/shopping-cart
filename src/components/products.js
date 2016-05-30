@@ -10,10 +10,10 @@ class Products extends Component {
     const { products } = this.props
     productList = (
       products.map((p) => {
-        return <Product product={p} onAddToCartClicked={() => this.props.addToCart(p.id)} key={p.id} />
+        return <Product description={p.description} price={p.price} onAddToCartClicked={() => this.props.addToCart(p.id)} key={p.id} />
       })
     )
-    
+
     return (
       <div>
         <h3>products:</h3>

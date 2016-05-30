@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Product from './product'
+import CartItem from './cart-item'
+import { getCartProducts } from '../reducers'
 
 class Cart extends Component {
   render() {
-    const { cart, products } = this.props
-    const hasProducts = cart.cartIds.length > 0
+    const { cartProducts, cartQuantity } = this.props
+    const hasProducts = cartProducts.length > 0
     const nodes = !hasProducts ?
       <em>Please add some products to cart.</em> :
-      cart.cartIds.map((id, i) => {
-        return <div key={id}>{products[id - 1].type} x{cart.cartQuantity[id]}</div>
+
+
+      cartProducts.map((p) => {
+        return <CartItem type={p.type} price={p.price} key={p.id} quantity={cartQuantity[p.id]} />
       }
     )
 
@@ -23,9 +26,10 @@ class Cart extends Component {
 }
 
 const mapStateToProps = (appState) => {
+
   return {
-    cart: appState.cart,
-    products: appState.products
+    cartProducts: getCartProducts(appState),
+    cartQuantity: appState.cart.cartQuantity
   }
 }
 
