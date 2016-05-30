@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CartItem from './cart-item'
-import { getCartProducts } from '../reducers'
+import { getCartProducts, getTotal } from '../reducers'
 
 class Cart extends Component {
   render() {
-    const { cartProducts, cartQuantity } = this.props
+    const { cartProducts, cartQuantity, cartTotal } = this.props
     const hasProducts = cartProducts.length > 0
     const nodes = !hasProducts ?
       <em>Please add some products to cart.</em> :
@@ -20,15 +20,16 @@ class Cart extends Component {
       <div>
         <h3>Your Cart</h3>
         <div>{nodes}</div>
+        ${cartTotal}
       </div>
     )
   }
 }
 
 const mapStateToProps = (appState) => {
-
   return {
     cartProducts: getCartProducts(appState),
+    cartTotal: getTotal(appState),
     cartQuantity: appState.cart.cartQuantity
   }
 }

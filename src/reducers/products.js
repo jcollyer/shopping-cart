@@ -16,12 +16,3 @@ export function getProductsById(cartProductIds, state = initialState.chocolates)
   })
   return cartProducts;
 }
-
-export function getProductsTotal(state = initialState.cartTotal, action) {
-  switch (action.type) {
-    case ADD_TO_CART:
-      return state
-    default:
-      return state
-  }
-}

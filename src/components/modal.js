@@ -12,7 +12,6 @@ class Modal extends Component {
           <h2>Cart</h2>
           <Cart />
           -------
-          <p>total: $</p>
           <button onClick={() => this.props.showModal(false)}>close modal</button>
         </div>
       )
