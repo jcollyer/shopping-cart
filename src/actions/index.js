@@ -7,3 +7,7 @@ export function addToCart(productId) {
 export function showModal(toggle) {
   return { type: types.SHOW_MODAL, toggle }
 }
+
+export function checkout() {
+  return { type: types.CHECKOUT }
+}

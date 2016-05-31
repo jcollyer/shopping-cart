@@ -1,5 +1,5 @@
 import { initialState } from '../api/initial-state'
-import { ADD_TO_CART } from '../constants/action-types'
+import { ADD_TO_CART, CHECKOUT } from '../constants/action-types'
 
 function cartIds(state = initialState.cartIds, action) {
   switch (action.type) {
@@ -25,8 +25,13 @@ function cartQuantity(state = initialState.cartQuantity, action ) {
 }
 
 export default function cart(state = initialState, action) {
-  return {
-    cartIds: cartIds(state.cartIds, action),
-    cartQuantity: cartQuantity(state.cartQuantity, action)
+  switch (action.type) {
+    case CHECKOUT:
+      return initialState
+    default:
+      return {
+        cartIds: cartIds(state.cartIds, action),
+        cartQuantity: cartQuantity(state.cartQuantity, action)
+      }
   }
 }

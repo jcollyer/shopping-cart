@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { showModal } from '../actions'
+import { showModal, checkout } from '../actions'
 import Cart from './cart'
 
 class Modal extends Component {
@@ -11,7 +11,7 @@ class Modal extends Component {
         <div className={showModal ? "" : "hide"}>
           <h2>Cart</h2>
           <Cart />
-          -------
+          <button onClick={() => this.props.checkout()}>Checkout</button>
           <button onClick={() => this.props.showModal(false)}>close modal</button>
         </div>
       )
@@ -25,4 +25,4 @@ const mapStateToProps = (appState) => {
   }
 }
 
-export default connect(mapStateToProps, { showModal })(Modal)
+export default connect(mapStateToProps, { showModal, checkout })(Modal)
