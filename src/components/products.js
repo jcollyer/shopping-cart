@@ -8,8 +8,8 @@ class Products extends Component {
 
   render() {
     var productList
-    const { products } = this.props
-
+    const { products, modal } = this.props
+    const showModal = modal.showModal;
     productList = (
       products.map((p) => {
         return <Product
@@ -22,11 +22,28 @@ class Products extends Component {
     )
 
     return (
-      <div>
-        <h3>products:</h3>
-        { productList }
-        <button onClick={() => this.props.showModal(true)}>show cart</button>
-        <Modal />
+      <div id="container">
+        <div id="cart-panel" className={ showModal ? "expand" : ""}>
+          <div className={ showModal ? "hide" : ""} onClick={() => this.props.showModal(true)}>
+            <i className="fa fa-shopping-cart"></i>
+          </div>
+          <div className={ showModal ? "" : "hide"}><Modal /></div>
+        </div>
+        <h1>SSCT</h1>
+        <h4>Sugar Sweet Chocolate Treats </h4>
+        <h2>Menu</h2>
+        <table id="products-table">
+          <thead>
+            <tr>
+              <th width="100px">Type</th>
+              <th width="100px">Price $</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            { productList }
+          </tbody>
+        </table>
       </div>
     )
   }
@@ -35,7 +52,8 @@ class Products extends Component {
 
 const mapStateToProps = (appState) => {
   return {
-    products: appState.products
+    products: appState.products,
+    modal: appState.modal
   }
 }
 

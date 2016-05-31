@@ -4,7 +4,7 @@ export default (props) => {
   return (
     <tr>
       <td>{type}</td>
-      <td>{price}</td>
+      <td>$ {price}</td>
       <td>{quantity}</td>
     </tr>
   )
